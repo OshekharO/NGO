@@ -1,0 +1,15 @@
+body {
+  scroll-behavior: smooth;
+}
+
+#hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/profile.jpg') center/cover no-repeat;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+footer {
+  font-size: 0.9rem;
+}
