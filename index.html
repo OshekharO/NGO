@@ -1,77 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saksham Shekher | Portfolio Website" />
-  <title>Saksham Shekher | Portfolio</title>
-  <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="css/style.css" />
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saksham Shekher | Analyst & Web Developer Portfolio">
+  <title>Saksham Shekher | Analyst Portfolio</title>
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</head>
 <body>
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="profile">
-      <img src="assets/avatar.jpg" alt="Saksham Shekher" class="avatar" />
+      <img src="assets/avatar.jpg" alt="Saksham Shekher" class="avatar">
       <h1>Saksham Shekher</h1>
-      <p>Frontend Web Developer | Open Source Enthusiast</p>
+      <p>MCA Student | Analyst & Web Developer</p>
     </div>
     <nav class="nav">
       <a href="#about">About</a>
-      <a href="#resume">Resume</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="socials">
-      <a href="https://github.com/OshekharO" target="_blank" aria-label="GitHub">
-        <ion-icon name="logo-github"></ion-icon>
-      </a>
-      <a href="https://linkedin.com/in/oshekher" target="_blank" aria-label="LinkedIn">
-        <ion-icon name="logo-linkedin"></ion-icon>
-      </a>
-      <a href="https://twitter.com/OshekharO" target="_blank" aria-label="Twitter">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </a>
+      <a href="https://github.com/OshekharO" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+      <a href="https://linkedin.com/in/oshekher" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a href="https://twitter.com/OshekharO" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
     </div>
   </aside>
 
   <!-- Main Content -->
   <main>
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="fade-in">
       <h2>About Me</h2>
-      <p>Hello! I'm Saksham Shekher, a passionate frontend web developer from Mumbai, India. I specialize in crafting clean, responsive, and user-friendly websites using HTML, CSS, and JavaScript.</p>
-      <p>Beyond coding, I actively contribute to open-source projects, manage online communities, and share my knowledge through tutorials and blog posts.</p>
-      <a href="Saksham_Shekher.pdf" class="btn" download>Download Resume</a>
+      <p>Hello, I am <strong>Saksham Shekher</strong>, currently pursuing Master of Computer Applications (MCA) at Ganpat University, Mehsana. I specialize in web development with hands-on experience in HTML, CSS, JavaScript, Bootstrap, and Python.</p>
+      <p>I enjoy building projects, solving problems, and contributing to open-source communities. My goal is to create impactful digital experiences that are both functional and visually appealing.</p>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume" class="fade-in">
-      <h2>Resume</h2>
-      <p>Currently pursuing a Master's degree in Computer Application. I have hands-on experience in web development, community management, and education.</p>
-      <p>For a detailed view of my academic and professional journey, please refer to my <a href="Saksham_Shekher.pdf" target="_blank">resume PDF</a>.</p>
+    <!-- Education -->
+    <section id="education" class="fade-in">
+      <h2>Education</h2>
+      <ul class="timeline">
+        <li>
+          <h3>Ganpat University, Mehsana</h3>
+          <p>Master of Computer Applications | 2025 — Present</p>
+        </li>
+        <li>
+          <h3>L.P. Sahi College, Patna</h3>
+          <p>B.Com (Accounts) – 67.8% | 2022 — 2025</p>
+        </li>
+        <li>
+          <h3>Kendriya Vidyalaya Sangathan, New Delhi</h3>
+          <p>Senior Secondary (Commerce) – 80.2% | 2020 — 2022</p>
+        </li>
+      </ul>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="fade-in">
-      <h2>Portfolio</h2>
-      <div class="projects" id="projects-container">
-        <!-- Projects will be dynamically loaded here -->
+    <!-- Experience -->
+    <section id="experience" class="fade-in">
+      <h2>Experience</h2>
+      <ul class="timeline">
+        <li>
+          <h3>Web Developer Intern - CodeClause</h3>
+          <p>Sep 2025</p>
+          <p>Built Weather Web App & Shopping Cart Website using HTML, JS, Bootstrap.</p>
+        </li>
+        <li>
+          <h3>Open Source Contributor</h3>
+          <p>2019 — Present</p>
+          <p>Contributing to open source projects, enhancing problem-solving and coding skills.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="fade-in">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <span class="skill">Python</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Java</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Bootstrap</span>
+        <span class="skill">Problem Solving</span>
+        <span class="skill">Communication</span>
+        <span class="skill">Teamwork</span>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Portfolio -->
+    <section id="portfolio" class="fade-in">
+      <h2>Portfolio</h2>
+      <div class="projects" id="projects-container">
+        <!-- Projects will load dynamically -->
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="fade-in">
       <h2>Contact</h2>
       <form action="https://formspree.io/f/mrgvgrrk" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </section>
   </main>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
   <script src="js/script.js"></script>
 </body>
 </html>
