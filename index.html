@@ -1,113 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Saksham Shekher | Analyst & Web Developer Portfolio">
-  <title>Saksham Shekher | Analyst Portfolio</title>
-  <link rel="icon" href="assets/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Saksham Shekher | Portfolio Website" />
+  <title>Saksham Shekher | Portfolio</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 <body>
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="profile">
-      <img src="assets/avatar.jpg" alt="Saksham Shekher" class="avatar">
+      <img src="assets/avatar.jpg" alt="Saksham Shekher" class="avatar" />
       <h1>Saksham Shekher</h1>
-      <p>MCA Student | Analyst & Web Developer</p>
+      <p>Web Developer | Open Source Enthusiast</p>
     </div>
     <nav class="nav">
       <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="socials">
-      <a href="https://github.com/OshekharO" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-      <a href="https://linkedin.com/in/oshekher" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-      <a href="https://twitter.com/OshekharO" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+      <a href="https://github.com/OshekharO" target="_blank" aria-label="GitHub">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      <a href="https://linkedin.com/in/oshekher" target="_blank" aria-label="LinkedIn">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+      <a href="https://twitter.com/OshekharO" target="_blank" aria-label="Twitter">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
     </div>
   </aside>
 
   <!-- Main Content -->
   <main>
-    <!-- About -->
+    <!-- About Section -->
     <section id="about" class="fade-in">
       <h2>About Me</h2>
-      <p>Hello, I am <strong>Saksham Shekher</strong>, currently pursuing Master of Computer Applications (MCA) at Ganpat University, Mehsana. I specialize in web development with hands-on experience in HTML, CSS, JavaScript, Bootstrap, and Python.</p>
+      <p>Hello! I'm Saksham Shekher, currently pursuing Master of Computer Applications (MCA) at Ganpat University, Mehsana. I specialize in web development with hands-on experience in HTML, CSS, JavaScript, Bootstrap, and Python.</p>
       <p>I enjoy building projects, solving problems, and contributing to open-source communities. My goal is to create impactful digital experiences that are both functional and visually appealing.</p>
+      <a href="Saksham_Shekher.pdf" class="btn" download>Download Resume</a>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="fade-in">
-      <h2>Education</h2>
-      <ul class="timeline">
-        <li>
-          <h3>Ganpat University, Mehsana</h3>
-          <p>Master of Computer Applications | 2025 — Present</p>
-        </li>
-        <li>
-          <h3>L.P. Sahi College, Patna</h3>
-          <p>B.Com (Accounts) – 67.8% | 2022 — 2025</p>
-        </li>
-        <li>
-          <h3>Kendriya Vidyalaya Sangathan, New Delhi</h3>
-          <p>Senior Secondary (Commerce) – 80.2% | 2020 — 2022</p>
-        </li>
-      </ul>
-    </section>
+    <!-- Resume Section -->
+    <section id="resume" class="fade-in">
+      <h2>Resume</h2>
+      <a href="Saksham_Shekher.pdf" class="btn" download>Download Resume</a>
 
-    <!-- Experience -->
-    <section id="experience" class="fade-in">
-      <h2>Experience</h2>
-      <ul class="timeline">
-        <li>
-          <h3>Web Developer Intern - CodeClause</h3>
-          <p>Sep 2025</p>
+      <!-- Education Timeline -->
+      <div class="timeline">
+        <h3>Education</h3>
+        <div class="timeline-item">
+          <span class="timeline-date">2025 — Present</span>
+          <h4>Master of Computer Applications</h4>
+          <p>Ganpat University, Mehsana</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2022 — 2025</span>
+          <h4>B.Com (Accounts) – 67.8%</h4>
+          <p>L.P. Sahi College, Patna</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2020 — 2022</span>
+          <h4>Senior Secondary (Commerce) – 80.2%</h4>
+          <p>Kendriya Vidyalaya Sangathan, New Delhi</p>
+        </div>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="timeline">
+        <h3>Experience</h3>
+        <div class="timeline-item">
+          <span class="timeline-date">Sep 2025</span>
+          <h4>Web Developer Intern - CodeClause</h4>
           <p>Built Weather Web App & Shopping Cart Website using HTML, JS, Bootstrap.</p>
-        </li>
-        <li>
-          <h3>Open Source Contributor</h3>
-          <p>2019 — Present</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2019 — Present</span>
+          <h4>Open Source Contributor</h4>
           <p>Contributing to open source projects, enhancing problem-solving and coding skills.</p>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </div>
 
-    <!-- Skills -->
-    <section id="skills" class="fade-in">
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <span class="skill">Python</span>
-        <span class="skill">SQL</span>
-        <span class="skill">Java</span>
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">Bootstrap</span>
-        <span class="skill">Problem Solving</span>
-        <span class="skill">Communication</span>
-        <span class="skill">Teamwork</span>
+      <!-- Skills Section -->
+      <div class="skills">
+        <h3>Skills</h3>
+        <p>Python, SQL, Java</p>
+        <p>HTML, CSS, JavaScript, Bootstrap</p>
+        <p>Problem Solving</p>
+        <p>Communication & Teamwork</p>
       </div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="fade-in">
       <h2>Portfolio</h2>
       <div class="projects" id="projects-container">
-        <!-- Projects will load dynamically -->
+        <!-- Projects will be dynamically loaded here -->
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="fade-in">
       <h2>Contact</h2>
       <form action="https://formspree.io/f/mrgvgrrk" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
