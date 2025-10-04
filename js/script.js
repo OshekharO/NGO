@@ -3,7 +3,7 @@ const projectsContainer = document.getElementById('projects-container');
 
 async function loadGitHubProjects() {
   try {
-    const res = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=10`);
+    const res = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=5`);
     const repos = await res.json();
 
     repos.forEach((repo,index)=>{
