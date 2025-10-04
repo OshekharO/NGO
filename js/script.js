@@ -1,12 +1,11 @@
 // ----------------------------
-// Portfolio: GitHub Projects
+// script.js
 // ----------------------------
 const githubUsername = "OshekharO"; // your GitHub username
-const portfolioContainer = document.getElementById('portfolio-items');
+const projectsContainer = document.getElementById('projects-container');
 
 async function loadGitHubProjects() {
   try {
-    // Fetch public repositories
     const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=100`);
     const repos = await response.json();
 
@@ -16,35 +15,25 @@ async function loadGitHubProjects() {
 
       // Create project card
       const projectCard = document.createElement('div');
-      projectCard.className = 'col-md-4 mb-4 fade-in';
+      projectCard.className = 'project-card fade-in';
       projectCard.innerHTML = `
-        <div class="card h-100 shadow-sm">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">${repo.name}</h5>
-            <p class="card-text">${repo.description || 'No description provided.'}</p>
-            <div class="mt-auto">
-              <p>
-                ⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}
-              </p>
-              ${repo.topics && repo.topics.length > 0 ? `<p>${repo.topics.map(topic => `<span class="badge bg-secondary me-1">${topic}</span>`).join('')}</p>` : ''}
-              <a href="${repo.html_url}" class="btn btn-primary btn-sm me-2" target="_blank">GitHub</a>
-              ${repo.homepage ? `<a href="${repo.homepage}" class="btn btn-success btn-sm" target="_blank">Live Demo</a>` : ''}
-            </div>
-          </div>
+        <h3>${repo.name}</h3>
+        <p>${repo.description || 'No description provided.'}</p>
+        <p>
+          ⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}
+        </p>
+        ${repo.topics && repo.topics.length > 0 ? `<p>${repo.topics.map(topic => `<span class="badge">${topic}</span>`).join(' ')}</p>` : ''}
+        <div class="project-links">
+          <a href="${repo.html_url}" target="_blank">GitHub</a>
+          ${repo.homepage ? `<a href="${repo.homepage}" target="_blank">Live Demo</a>` : ''}
         </div>
       `;
-      portfolioContainer.appendChild(projectCard);
+      projectsContainer.appendChild(projectCard);
     });
 
-    // ----------------------------
-    // Fade-in animation on scroll
-    // ----------------------------
+    // Fade-in animation for scroll
     const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -53,14 +42,13 @@ async function loadGitHubProjects() {
       });
     }, appearOptions);
 
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
+    faders.forEach(fader => appearOnScroll.observe(fader));
 
   } catch (error) {
     console.error("Error fetching GitHub repos:", error);
+    projectsContainer.innerHTML = `<p>Unable to load projects at this time.</p>`;
   }
 }
 
-// Call the function to load projects
-loadGitHubProjects();
+// Load projects on page load
+window.addEventListener('DOMContentLoaded', loadGitHubProjects);
