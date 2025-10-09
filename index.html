@@ -1,121 +1,938 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saksham Shekher | Portfolio Website" />
-  <title>Saksham Shekher | Portfolio</title>
+  <meta name="description" content="Saksham Shekher - Web Developer & Open Source Enthusiast specializing in HTML, CSS, JavaScript, Bootstrap, and Python. Currently pursuing MCA at Ganpat University." />
+  <meta name="keywords" content="Saksham Shekher, Web Developer, Python Developer, Open Source, Portfolio, HTML, CSS, JavaScript, Bootstrap" />
+  <meta name="author" content="Saksham Shekher" />
   <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <title>Saksham Shekher | Web Developer & Open Source Enthusiast</title>
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Saksham Shekher | Web Developer Portfolio" />
+  <meta property="og:description" content="Web Developer & Open Source Enthusiast specializing in modern web technologies" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <style>
+    :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3f37c9;
+      --accent-color: #f72585;
+      --light-color: #f8f9fa;
+      --dark-color: #212529;
+      --text-color: #333;
+      --text-light: #6c757d;
+      --card-bg: #ffffff;
+      --body-bg: #f8f9fa;
+      --header-gradient: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+    }
+
+    [data-bs-theme="dark"] {
+      --primary-color: #4cc9f0;
+      --secondary-color: #4361ee;
+      --accent-color: #f72585;
+      --light-color: #343a40;
+      --dark-color: #f8f9fa;
+      --text-color: #e9ecef;
+      --text-light: #adb5bd;
+      --card-bg: #2b3035;
+      --body-bg: #212529;
+      --header-gradient: linear-gradient(135deg, #3a0ca3 0%, #7209b7 100%);
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--body-bg);
+      transition: var(--transition);
+    }
+
+    /* Header Section */
+    .header-section {
+      background: var(--header-gradient);
+      color: white;
+      padding: 6rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+
+    .profile-avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow);
+      margin: 0 auto 1.5rem;
+      background-color: var(--light-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--primary-color);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 6.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      transition: var(--transition);
+      cursor: pointer;
+      z-index: 1030;
+      backdrop-filter: blur(10px);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(30deg);
+    }
+
+    /* Navigation */
+    .sticky-nav {
+      background-color: var(--card-bg);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      transition: var(--transition);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--primary-color) !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-link {
+      color: var(--text-color) !important;
+      font-weight: 500;
+      transition: var(--transition);
+      border-radius: var(--border-radius);
+      margin: 0 0.25rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary-color) !important;
+      background-color: rgba(var(--primary-color-rgb), 0.1);
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    /* Card Styles */
+    .custom-card {
+      background-color: var(--card-bg);
+      border: none;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-color);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      border: 3px solid var(--card-bg);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Skills */
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .progress {
+      height: 8px;
+      border-radius: 10px;
+      background-color: rgba(var(--primary-color-rgb), 0.1);
+    }
+
+    .progress-bar {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    /* Portfolio */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      height: 100%;
+    }
+
+    .project-image {
+      height: 200px;
+      background-color: var(--light-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.05);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: var(--border-radius);
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      transition: var(--transition);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-primary {
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+      border-radius: var(--border-radius);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    /* Contact Info */
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-right: 1rem;
+      width: 40px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--card-bg);
+      padding: 3rem 0;
+      border-top: 1px solid rgba(var(--primary-color-rgb), 0.1);
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    p, li, span {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .lead {
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      border: 4px solid rgba(var(--primary-color-rgb), 0.1);
+      border-left-color: var(--primary-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 2rem auto;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .header-section {
+        padding: 4rem 0 2rem;
+      }
+      
+      .profile-avatar {
+        width: 140px;
+        height: 140px;
+        font-size: 3rem;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .display-4 {
+        font-size: 2.5rem;
+      }
+      
+      .theme-toggle {
+        top: 5.5rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .header-section {
+        padding: 3rem 0 1.5rem;
+      }
+      
+      .display-4 {
+        font-size: 2rem;
+      }
+      
+      .section {
+        padding: 2rem 0;
+      }
+      
+      .theme-toggle {
+        top: 4.5rem;
+        right: 0.8rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="profile">
-      <img src="assets/avatar.jpg" alt="Saksham Shekher" class="avatar" />
-      <h1>Saksham Shekher</h1>
-      <p>Web Developer | Open Source Enthusiast</p>
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+    <i class="bi bi-sun-fill"></i>
+  </button>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-nav">
+    <div class="container">
+      <a class="navbar-brand" href="#">Saksham Shekher</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resume">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="socials">
-      <a href="https://github.com/OshekharO" target="_blank" aria-label="GitHub">
-        <ion-icon name="logo-github"></ion-icon>
-      </a>
-      <a href="https://linkedin.com/in/oshekher" target="_blank" aria-label="LinkedIn">
-        <ion-icon name="logo-linkedin"></ion-icon>
-      </a>
-      <a href="https://twitter.com/OshekharO" target="_blank" aria-label="Twitter">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </a>
+  </nav>
+
+  <!-- Header Section -->
+  <header class="header-section text-center">
+    <div class="container">
+      <div class="profile-avatar" aria-label="Profile picture">👨‍💻</div>
+      <h1 class="display-4 fw-bold mb-3">Saksham Shekher</h1>
+      <p class="lead mb-4">Web Developer | Open Source Enthusiast</p>
     </div>
-  </aside>
+  </header>
 
   <!-- Main Content -->
   <main>
     <!-- About Section -->
-    <section id="about" class="fade-in">
-      <h2>About Me</h2>
-      <p>Hello! I'm Saksham Shekher, currently pursuing Master of Computer Applications (MCA) at Ganpat University, Mehsana. I specialize in web development with hands-on experience in HTML, CSS, JavaScript, Bootstrap, and Python.</p>
-      <p>I enjoy building projects, solving problems, and contributing to open-source communities. My goal is to create impactful digital experiences that are both functional and visually appealing.</p>
-      <a href="Saksham_Shekher.pdf" class="btn" download>Download Resume</a>
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <div class="custom-card p-4 p-md-5 fade-in">
+              <p class="lead">Hello! I'm Saksham Shekher, currently pursuing Master of Computer Applications (MCA) at Ganpat University, Mehsana.</p>
+              <p>I specialize in web development with hands-on experience in HTML, CSS, JavaScript, Bootstrap, and Python. I enjoy building projects, solving problems, and contributing to open-source communities.</p>
+              <p>My goal is to create impactful digital experiences that are both functional and visually appealing.</p>
+              <div class="mt-4">
+                <a href="#resume" class="btn btn-outline-primary">View Resume</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="row g-3 text-center">
+              <div class="col-6">
+                <div class="custom-card p-3 fade-in">
+                  <div class="card-icon">
+                    <i class="bi bi-code-slash"></i>
+                  </div>
+                  <h5>Web Development</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="custom-card p-3 fade-in">
+                  <div class="card-icon">
+                    <i class="bi bi-github"></i>
+                  </div>
+                  <h5>Open Source</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="custom-card p-3 fade-in">
+                  <div class="card-icon">
+                    <i class="bi bi-puzzle"></i>
+                  </div>
+                  <h5>Problem Solving</h5>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="custom-card p-3 fade-in">
+                  <div class="card-icon">
+                    <i class="bi bi-people"></i>
+                  </div>
+                  <h5>Teamwork</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="fade-in">
-      <h2>Resume</h2>
-      <a href="Saksham_Shekher.pdf" class="btn" download>Download Resume</a>
-
-      <!-- Education Timeline -->
-      <div class="timeline">
-        <h3>Education</h3>
-        <div class="timeline-item">
-          <span class="timeline-date">2025 — Present</span>
-          <h4>Master of Computer Applications</h4>
-          <p>Ganpat University, Mehsana</p>
+    <section id="resume" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Resume</h2>
+        
+        <div class="text-center mb-5">
+          <button class="btn btn-primary btn-lg" id="downloadResume">
+            <i class="bi bi-download me-2"></i>Download Resume
+          </button>
         </div>
-        <div class="timeline-item">
-          <span class="timeline-date">2022 — 2025</span>
-          <h4>B.Com (Accounts) – 67.8%</h4>
-          <p>L.P. Sahi College, Patna</p>
+        
+        <div class="row">
+          <!-- Education -->
+          <div class="col-lg-6 mb-5">
+            <div class="custom-card p-4 h-100 fade-in">
+              <h3 class="h4 mb-4"><i class="bi bi-book me-2"></i>Education</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <span class="timeline-date">Aug 2025 — Present</span>
+                  <h4>Master of Computer Applications</h4>
+                  <p class="text-muted">Ganpat University, Mehsana</p>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-date">Aug 2022 — Jun 2025</span>
+                  <h4>Bachelor of Commerce</h4>
+                  <p class="text-muted">L.P. Sahi College, Patna</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Experience -->
+          <div class="col-lg-6 mb-5">
+            <div class="custom-card p-4 h-100 fade-in">
+              <h3 class="h4 mb-4"><i class="bi bi-briefcase me-2"></i>Experience</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <span class="timeline-date">Sep 2025</span>
+                  <h4>Web Developer Intern - CodeClause</h4>
+                  <p class="text-muted">Remote</p>
+                  <ul class="mt-2">
+                    <li>Developed a Weather Web App using HTML, JavaScript, Bootstrap, and OpenWeatherMap API</li>
+                    <li>Built a Shopping Cart Website with add/remove items and responsive UI</li>
+                  </ul>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-date">2019 — Present</span>
+                  <h4>Open Source Contributor</h4>
+                  <p>Contributing to open source projects, enhancing problem-solving and coding skills.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="timeline-item">
-          <span class="timeline-date">2020 — 2022</span>
-          <h4>Senior Secondary (Commerce) – 80.2%</h4>
-          <p>Kendriya Vidyalaya Sangathan, New Delhi</p>
+        
+        <!-- Skills -->
+        <div class="custom-card p-4 fade-in">
+          <h3 class="h4 mb-4"><i class="bi bi-tools me-2"></i>Skills</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>Python</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>JavaScript</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>HTML/CSS</span>
+                  <span>90%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 90%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>Bootstrap</span>
+                  <span>85%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>SQL</span>
+                  <span>75%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-name">
+                  <span>Git</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Experience Timeline -->
-      <div class="timeline">
-        <h3>Experience</h3>
-        <div class="timeline-item">
-          <span class="timeline-date">Sep 2025</span>
-          <h4>Web Developer Intern - CodeClause</h4>
-          <p>Built Weather Web App & Shopping Cart Website using HTML, JS, Bootstrap.</p>
-        </div>
-        <div class="timeline-item">
-          <span class="timeline-date">2019 — Present</span>
-          <h4>Open Source Contributor</h4>
-          <p>Contributing to open source projects, enhancing problem-solving and coding skills.</p>
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <div class="skills">
-        <h3>Skills</h3>
-        <p>Python, SQL, Java</p>
-        <p>HTML, CSS, JavaScript, Bootstrap</p>
-        <p>Problem Solving</p>
-        <p>Communication & Teamwork</p>
       </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="fade-in">
-      <h2>Portfolio</h2>
-      <div class="projects" id="projects-container">
-        <!-- Projects will be dynamically loaded here -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="text-center mb-5">Here are some of my popular GitHub repositories with 40+ stars.</p>
+        
+        <div class="row g-4" id="projectsContainer">
+          <!-- Projects will be dynamically loaded here -->
+          <div class="col-12 text-center">
+            <div class="spinner" id="loadingSpinner"></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-      <h2>Contact</h2>
-      <form action="https://formspree.io/f/mrgvgrrk" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
+    <section id="contact" class="section bg-light">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="custom-card p-4 p-md-5 fade-in">
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Phone</h5>
+                  <p class="mb-0">+91-6203814769</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Email</h5>
+                  <p class="mb-0">sakshamshekher@outlook.com</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="bi bi-linkedin"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">LinkedIn</h5>
+                  <p class="mb-0">linkedin.com/in/oshekher</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-icon">
+                  <i class="bi bi-github"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">GitHub</h5>
+                  <p class="mb-0">github.com/OshekharO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <script src="js/script.js"></script>
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="d-flex justify-content-center mb-4">
+        <a href="https://github.com/OshekharO" class="btn btn-outline-primary btn-sm mx-2" target="_blank" aria-label="GitHub profile">
+          <i class="bi bi-github me-1"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/oshekher" class="btn btn-outline-primary btn-sm mx-2" target="_blank" aria-label="LinkedIn profile">
+          <i class="bi bi-linkedin me-1"></i> LinkedIn
+        </a>
+        <a href="https://twitter.com/OshekharO" class="btn btn-outline-primary btn-sm mx-2" target="_blank" aria-label="Twitter profile">
+          <i class="bi bi-twitter me-1"></i> Twitter
+        </a>
+      </div>
+      <p class="mb-0">&copy; 2023 Saksham Shekher. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
+      themeIcon.className = newTheme === 'light' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+      
+      // Save theme preference to localStorage
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Check for saved theme preference or prefer-color-scheme
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      let theme = 'light';
+      if (savedTheme) {
+        theme = savedTheme;
+      } else if (systemPrefersDark) {
+        theme = 'dark';
+      }
+      
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      themeIcon.className = theme === 'light' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    }
+
+    // Function to load GitHub repositories with 40+ stars
+    async function loadGitHubRepos() {
+      const projectsContainer = document.getElementById('projectsContainer');
+      const loadingSpinner = document.getElementById('loadingSpinner');
+      
+      try {
+        // Fetch repositories from GitHub API
+        const response = await fetch('https://api.github.com/users/OshekharO/repos?sort=stars&per_page=100');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch repositories');
+        }
+        
+        const repos = await response.json();
+        
+        // Filter repositories with 40+ stars
+        const popularRepos = repos.filter(repo => repo.stargazers_count >= 40);
+        
+        // Clear loading spinner
+        loadingSpinner.style.display = 'none';
+        
+        // If no popular repos found, show a message
+        if (popularRepos.length === 0) {
+          projectsContainer.innerHTML = '<div class="col-12 text-center"><p>No repositories with 40+ stars found. Check back later!</p></div>';
+          return;
+        }
+        
+        // Display popular repositories
+        popularRepos.forEach(repo => {
+          const projectCol = document.createElement('div');
+          projectCol.className = 'col-md-6 col-lg-4';
+          
+          projectCol.innerHTML = `
+            <div class="project-card custom-card">
+              <div class="project-image">
+                <i class="bi bi-folder" aria-hidden="true"></i>
+              </div>
+              <div class="p-4">
+                <h3 class="h5">${repo.name}</h3>
+                <p class="text-muted">${repo.description || 'No description available'}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a href="${repo.html_url}" class="btn btn-sm btn-outline-primary" target="_blank" aria-label="View ${repo.name} code">View Code</a>
+                  <span class="badge bg-primary">⭐ ${repo.stargazers_count}</span>
+                </div>
+              </div>
+              <div class="project-overlay">
+                <a href="${repo.html_url}" class="btn btn-primary me-2" target="_blank" aria-label="View ${repo.name} code">Code</a>
+                ${repo.homepage ? `<a href="${repo.homepage}" class="btn btn-light" target="_blank" aria-label="View ${repo.name} demo">Demo</a>` : ''}
+              </div>
+            </div>
+          `;
+          
+          projectsContainer.appendChild(projectCol);
+        });
+      } catch (error) {
+        console.error('Error fetching GitHub repositories:', error);
+        loadingSpinner.style.display = 'none';
+        projectsContainer.innerHTML = '<div class="col-12 text-center"><p>Unable to load projects at this time. Please try again later.</p></div>';
+      }
+    }
+
+    // Download resume functionality
+    function downloadResume() {
+      // Create a link element for downloading the PDF
+      const link = document.createElement('a');
+      link.href = 'Saksham_Shekher.pdf'; // Path to your actual PDF file
+      link.download = 'Saksham_Shekher_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.nav-link, .btn[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Update active nav link
+          document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+          });
+          this.classList.add('active');
+          
+          // Update URL without page refresh
+          history.pushState(null, null, targetId);
+        }
+      });
+    });
+
+    // Download resume button handler
+    document.getElementById('downloadResume').addEventListener('click', downloadResume);
+
+    // Initialize theme and load GitHub repositories when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      initTheme();
+      loadGitHubRepos();
+      
+      // Add animation to elements when they come into view
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.custom-card').forEach(card => {
+        observer.observe(card);
+      });
+    });
+  </script>
 </body>
 </html>
